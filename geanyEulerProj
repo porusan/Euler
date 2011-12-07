@@ -1,0 +1,19 @@
+
+[indentation]
+indent_width=2
+indent_type=0
+indent_hard_tab_width=8
+detect_indent=false
+indent_mode=2
+
+[project]
+name=ProjectEuler
+base_path=/home/poru/git/Euler
+
+[long line marker]
+long_line_behaviour=1
+long_line_column=72
+
+[files]
+current_page=0
+FILE_NAME_0=0;Ruby;0;16;0;1;0;/home/poru/git/Euler/001/001.rb;0;2
