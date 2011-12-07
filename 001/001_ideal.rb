@@ -12,4 +12,4 @@ def sumOfDivisibleBy(n)
   return largest * (largest + 1) * n / 2
 end
 
-puts divisibleBy(3) + divisibleBy(5) - divisibleBy(15)
+puts sumOfDivisibleBy(3) + sumOfDivisibleBy(5) - sumOfDivisibleBy(15)
