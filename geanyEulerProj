@@ -9,11 +9,16 @@ indent_mode=2
 [project]
 name=ProjectEuler
 base_path=/home/poru/git/Euler
+description=
 
 [long line marker]
 long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=0
+current_page=4
 FILE_NAME_0=0;Ruby;0;16;0;1;0;/home/poru/git/Euler/001/001.rb;0;2
+FILE_NAME_1=0;Ruby;0;16;0;1;0;/home/poru/git/Euler/002/002.rb;0;2
+FILE_NAME_2=249;Ruby;0;16;0;1;0;/home/poru/git/Euler/002/test.rb;0;2
+FILE_NAME_3=41;Ruby;0;16;0;1;0;/home/poru/git/Euler/003/003.rb;0;2
+FILE_NAME_4=0;Ruby;0;16;0;1;0;/home/poru/git/Euler/003/test003.rb;0;2
