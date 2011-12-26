@@ -25,6 +25,10 @@ end
 
 def getPrimeFactors n
 
+  if n.class.to_s != 'Fixnum' || n < 2
+    Raise 'Input must be positive integer greater than one'
+  end
+
   i = 2
 
   while i <= (Math.sqrt n).floor
