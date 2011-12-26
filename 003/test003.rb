@@ -1,5 +1,5 @@
 require 'test/unit'
-require './003'
+require './lib003'
 
 class Test003 < Test::Unit::TestCase
 
