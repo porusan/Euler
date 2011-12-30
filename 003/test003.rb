@@ -9,6 +9,10 @@ class Test003 < Test::Unit::TestCase
   def testIsPrime2
     assert isPrime(2), '2 is a prime number!'
   end
+  
+  def testIsPrime3
+    assert isPrime(3), '3 is a prime number!'
+  end
 
   def testIsPrime13
     assert isPrime(13), '13 is a prime number!'

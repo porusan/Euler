@@ -1,23 +1,36 @@
 def isPrime n
-  # hardcode lowest prime (starting point)
-  i = 2
+  
+  if n == 2
+    return true
+  elsif n < 2 || n % 2 == 0
+    return false
+  end
+
+  # hardcode next lowest prime (starting point)
+  i = 3
+  
   # if there are no factors when reaching the closest integer less than
   # or equal to the square root, then that number is prime
-  max = (Math.sqrt n).floor
-  while i <= max
+  while i <= (Math.sqrt n).floor
     if n % i == 0
       return false
     end
-    i += 1
+    # we start on an odd integer, and no multiples of 2 are prime
+    i += 2
   end
+  
   return true
 end
 
 def getNextPrime n
-  i = n +1
+  if n % 2 == 0
+    i = n + 1
+  else
+    i = n + 2
+  end
   
   while ! isPrime(i) 
-    i += 1
+    i += 2
   end
   
   return i
