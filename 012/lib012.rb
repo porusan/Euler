@@ -20,3 +20,24 @@ def findNumberOfDivisors factors
   return calcs.uniq.length
 
 end
+
+def calculateNumberOfDivisors factors
+
+  factorCounts = {}
+
+  factors.each do |f|
+
+    if factorCounts.has_key?(f)
+      factorCounts[f] += 1
+    else
+      factorCounts[f] = 1
+    end
+
+  end
+
+  count = 1;
+  factorCounts.values.each { |n| count *= (n + 1) }
+
+  return count
+
+end

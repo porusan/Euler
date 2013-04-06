@@ -31,4 +31,17 @@ class Test012 < Test::Unit::TestCase
     assert_equal 6, findNumberOfDivisors(getPrimeFactors(32))
   end
 
+  # Test Cases for improved find divisors functions
+  def  testCalcNumberOfDivisorsOf2
+    assert_equal 2, calculateNumberOfDivisors(getPrimeFactors(2))
+  end
+
+  def testCalcNumberOfDivisorsOf28
+    assert_equal 6, calculateNumberOfDivisors(getPrimeFactors(28))
+  end
+
+  def testCalcNumberOfDivisorsOf30
+    assert_equal 8, calculateNumberOfDivisors(getPrimeFactors(30))
+  end
+
 end

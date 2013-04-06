@@ -10,6 +10,8 @@ require '../003/lib003.rb'
 # it needs to have AT LEAST as many prime factors as a the lowest number with all distinct prime factors to satisfy this
 # That is, it has to have at least as many prime factors as the the first power of 2 greater than 500, i.e. 512 (2^9). So, at _least_ 9 factors
 
+t1 = Time.now
+
 factorThreshold = 9
 factors = []
 
@@ -27,7 +29,8 @@ while keepGoing
   # first check if number of factors meets threshold 
   if factors.length > factorThreshold
 
-    d = findNumberOfDivisors factors
+    # d = findNumberOfDivisors factors
+    d = calculateNumberOfDivisors factors
 
   end
 
@@ -37,5 +40,8 @@ while keepGoing
 
 end
 
+puts
+puts 'Finished in ' + (Time.now - t1).to_s + ' seconds.'
 puts 'The lowest found was triangle number #' + n.to_s + ', equal to ' + t.to_s + ', with ' + d.to_s + ' divisors'
 print 'This number has ' + factors.length.to_s + ' prime factors: ' + factors.to_s
+puts
