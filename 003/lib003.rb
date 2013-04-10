@@ -1,3 +1,5 @@
+@@listOfPrimes = {1 => 2}
+
 def isPrime n
   
   if n == 2
@@ -36,10 +38,59 @@ def getNextPrime n
   return i
 end
 
+def getPrimeById i
+
+  if i < 1
+    raise 'Input must be positive integer greater than zero'
+  end
+
+  initial = @@listOfPrimes[i]
+  
+  if initial != nil
+    return initial
+  else
+    # calculate
+    secondary = @@listOfPrimes[i - 1]
+    
+    if secondary != nil
+        p = getNextPrime secondary
+        @@listOfPrimes[i] = p
+        return p
+    else
+      raise "Something isn't set up right"
+    end
+  end
+      
+end
+
 def getPrimeFactors n
 
   if n.class.to_s != 'Fixnum' || n < 2
-    Raise 'Input must be positive integer greater than one'
+    raise 'Input must be positive integer greater than one'
+  end
+
+  i = 1
+  p = 2
+
+  while p <= (Math.sqrt n).floor
+    if n % p == 0
+      primes = [p]
+      getPrimeFactors(n / p).each {|i| primes.push i}
+      return primes
+    end
+    i += 1
+    p = getPrimeById(i)
+  end
+
+  # if i > square root of n, then n is prime
+  return [n]
+
+end
+
+def getPrimeFactorsOld n
+
+  if n.class.to_s != 'Fixnum' || n < 2
+    raise 'Input must be positive integer greater than one'
   end
 
   i = 2
