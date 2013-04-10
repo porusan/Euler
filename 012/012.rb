@@ -9,6 +9,10 @@ require '../003/lib003.rb'
 # SO - in order to find the lowest number with 500 distinct divisors, 
 # it needs to have AT LEAST as many prime factors as a the lowest number with all distinct prime factors to satisfy this
 # That is, it has to have at least as many prime factors as the the first power of 2 greater than 500, i.e. 512 (2^9). So, at _least_ 9 factors
+#
+# Second pass:
+# There is a more efficient way to determine the number of divisors than calculating all the combinations of the prime factors and removing duplicates
+# The number of divisors can be calculated by (count(P1) + 1)*(count(P2) + 1)*...(count(Pn) + 1) (where Pn is a prime factor)
 
 t1 = Time.now
 
