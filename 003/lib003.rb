@@ -24,6 +24,7 @@ def isPrime n
   return true
 end
 
+# the most basic way to brute-force finding the next prime
 def getNextPrime n
   if n % 2 == 0
     i = n + 1
@@ -32,12 +33,18 @@ def getNextPrime n
   end
   
   while ! isPrime(i) 
+    # no multiples of 2 are prime, and we are starting on an odd number
     i += 2
   end
   
   return i
 end
 
+# this works by building up a hash of primes (prime ordinal to value)
+# the class variable listOfPrimes is built up from the lowest primes,
+# and if a prime ordinal is requested that is beyond the 
+# next highest discovered, an error is thrown
+# TODO: update this to work when given too high an ordinal
 def getPrimeById i
 
   if i < 1
@@ -73,35 +80,17 @@ def getPrimeFactors n
   p = 2
 
   while p <= (Math.sqrt n).floor
+    
     if n % p == 0
-      primes = [p]
-      getPrimeFactors(n / p).each {|i| primes.push i}
-      return primes
+      # recurse!
+      factors = [p]
+      getPrimeFactors(n / p).each {|i| factors.push i}
+      return factors
     end
+
     i += 1
     p = getPrimeById(i)
-  end
-
-  # if i > square root of n, then n is prime
-  return [n]
-
-end
-
-def getPrimeFactorsOld n
-
-  if n.class.to_s != 'Fixnum' || n < 2
-    raise 'Input must be positive integer greater than one'
-  end
-
-  i = 2
-
-  while i <= (Math.sqrt n).floor
-    if n % i == 0
-      primes = [i]
-      getPrimeFactors(n / i).each {|i| primes.push i}
-      return primes
-    end
-    i = getNextPrime(i)
+  
   end
 
   # if i > square root of n, then n is prime

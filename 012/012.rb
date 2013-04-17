@@ -33,7 +33,6 @@ while keepGoing
   # first check if number of factors meets threshold 
   if factors.length > factorThreshold
 
-    # d = findNumberOfDivisors factors
     d = calculateNumberOfDivisors factors
 
   end
