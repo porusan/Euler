@@ -4,7 +4,9 @@ def findTriangleNumber n
   return (n * (n + 1)) / 2
 end
 
-# That is, all the divisors including 1 and n
+# Deprecated method with longer runtime -
+# This method brute-forces determining the number of divisors
+# By multiplying through all the combinations of prime factors
 def findNumberOfDivisors factors
 
   i = factors.length
@@ -21,6 +23,7 @@ def findNumberOfDivisors factors
 
 end
 
+# Note: all divisors including 1 and n
 def calculateNumberOfDivisors factors
 
   factorCounts = {}
