@@ -1,12 +1,11 @@
 require 'test/unit'
 require './lib015.rb'
 
-class Test014 < Test::Unit::TestCase
+class Test015 < Test::Unit::TestCase
 
   def testCombination4choose2
     assert_equal(6, combinaton(4, 2))
   end
-
 
   def testCombination4choose1
     assert_equal(4, combinaton(4, 1))
