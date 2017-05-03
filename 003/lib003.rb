@@ -24,6 +24,37 @@ def isPrime n
   return true
 end
 
+# a better way to determine if a number is prime by only dividing it by known primes
+def isPrimePrime n
+
+  if n == 2
+    return true
+  elsif n < 2
+    return false
+  end
+
+  j = 1
+  i = @@listOfPrimes[j]
+
+  while i <= (Math.sqrt n).floor
+
+    if n % i == 0
+      return false
+    end
+
+    if @@listOfPrimes[j+1] == nil
+      @@listOfPrimes[j+1] = getNextPrime(@@listOfPrimes[j])
+    end
+
+    j+=1
+    i = @@listOfPrimes[j]
+
+  end
+
+  return true
+end
+
+
 # the most basic way to brute-force finding the next prime
 def getNextPrime n
   if n % 2 == 0
@@ -32,7 +63,7 @@ def getNextPrime n
     i = n + 2
   end
   
-  while ! isPrime(i) 
+  while ! isPrimePrime(i) 
     # no multiples of 2 are prime, and we are starting on an odd number
     i += 2
   end
@@ -97,3 +128,4 @@ def getPrimeFactors n
   return [n]
 
 end
+

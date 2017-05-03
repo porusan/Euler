@@ -31,6 +31,33 @@ class Test003 < Test::Unit::TestCase
   end
 
   #-------------------------
+  # Test isPrimePrime
+  #-------------------------
+  def testIsPrime2
+    assert isPrimePrime(2), '2 is a prime number!'
+  end
+  
+  def testIsPrime3
+    assert isPrimePrime(3), '3 is a prime number!'
+  end
+
+  def testIsPrime13
+    assert isPrimePrime(13), '13 is a prime number!'
+  end
+  
+  def testIsPrime14
+    assert ! isPrimePrime(14), '14 is not a prime number!'
+  end
+  
+  def testIsPrime101
+    assert isPrimePrime(101), '101 is a prime number!'
+  end
+  
+  def testIsPrime221
+    assert ! isPrimePrime(221), '221 is not a prime number!'
+  end
+
+  #-------------------------
   # Test getNextPrime
   #-------------------------
   def testGetNextPrime2
